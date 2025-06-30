@@ -8,11 +8,11 @@
     <meta name="description" content="Responsive Bootstrap 5 admin dashboard template & web App ui kit.">
     <meta name="keyword"
         content="LUNO, Bootstrap 5, ReactJs, Angular, Laravel, VueJs, ASP .Net, Admin Dashboard, Admin Theme, HRMS, Projects, Hospital Admin, CRM Admin, Events, Fitness, Music, Inventory, Job Portal">
-    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}" type="image/x-icon"> <!-- Favicon-->
+    <link rel="icon" href="{{ secure_asset('assets/img/favicon.ico') }}" type="image/x-icon"> <!-- Favicon-->
     <title>Sign In Page</title>
     <!-- Application vendor css url -->
     <!-- project css file  -->
-    <link rel="stylesheet" href="{{ asset('assets/css/luno-style.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('assets/css/luno-style.css') }}">
     <!-- Jquery Core Js -->
     <script src="./assets/js/plugins.js"></script>
 </head>
@@ -104,7 +104,7 @@
     <!-- Modal: Setting -->
     <!-- Jquery Page Js -->
     <!-- Jquery Page Js -->
-    <script src="./assets/js/theme.js"></script>
+    <script src="{{ secure_asset('assets/js/theme.js') }}"></script>
     <!-- Plugin Js -->
     <!-- Vendor Script -->
 </body>
