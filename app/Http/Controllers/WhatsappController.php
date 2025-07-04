@@ -48,7 +48,7 @@ class WhatsappController extends Controller
                 $checkHistory = $customer->histories()->where('created_at', '>=', now()->subMinutes(60))->latest()->first();
 
                 if (!$checkHistory || $checkHistory->dialog_id === null) {
-                    $reply = "Hallo Jasfrenz, terima kasih sudah menghubungi Layanan Jasa Raharja Cirebon. Jam operasional Jasa Raharja Cirebon adalah Senin – Jumat (kecuali hari Libur Nasional) pukul 07.30-16.30 WIB.\n";
+                    $reply = "Hallo {$name}, terima kasih sudah menghubungi Layanan Jasa Raharja Cirebon. Jam operasional Jasa Raharja Cirebon adalah Senin – Jumat (kecuali hari Libur Nasional) pukul 07.30-16.30 WIB.\n";
                     $dialog = Dialog::where('parent_id', null)->first();
                     $customer->histories()->create([
                         'created_at' => now(),
@@ -99,7 +99,7 @@ class WhatsappController extends Controller
                         $customer->histories()->create([
                             'created_at' => now(),
                             'step' => $message,
-                            'dialog_id' => 0,
+                            'dialog_id' => null,
                         ]);
                     }
                 } else {
@@ -115,7 +115,7 @@ class WhatsappController extends Controller
                     } else {
                         $dialog = Dialog::where('dialog_id', $checkHistory->dialog_id)->first();
                     }
-                    $this->sendMessage($from, $dialog->message ?? 'Jawaban tidak valid');
+                    $this->sendMessage($from, $dialog->message ?? '');
                 }
             } else {
                 Log::info('No message or sender information found');
