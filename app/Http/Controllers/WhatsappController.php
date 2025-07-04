@@ -96,6 +96,11 @@ class WhatsappController extends Controller
                         $this->sendMessage($from, $dialog);
                         $this->sendMessage($from, $dialog2);
                         $this->sendMessage($from, $dialog3);
+                        $customer->histories()->create([
+                            'created_at' => now(),
+                            'step' => $message,
+                            'dialog_id' => 0,
+                        ]);
                     }
                 } else {
                     Log::info("History: $checkHistory, Dialog: {$checkHistory->dialog_id}");
@@ -107,6 +112,8 @@ class WhatsappController extends Controller
                             'step' => $message,
                             'dialog_id' => $dialog->id,
                         ]);
+                    } else {
+                        $dialog = Dialog::where('dialog_id', $checkHistory->dialog_id)->first();
                     }
                     $this->sendMessage($from, $dialog->message ?? 'Jawaban tidak valid');
                 }
