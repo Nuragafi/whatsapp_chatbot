@@ -99,9 +99,15 @@ class WhatsappController extends Controller
                         $customer->histories()->create([
                             'created_at' => now(),
                             'step' => $message,
-                            'dialog_id' => null,
+                            'dialog_id' => 10,
                         ]);
                     }
+                } else if ($checkHistory->dialog_id == 10) {
+                    $customer->histories()->create([
+                        'created_at' => now(),
+                        'step' => $message,
+                        'dialog_id' => null,
+                    ]);
                 } else {
                     Log::info("History: $checkHistory, Dialog: {$checkHistory->dialog_id}");
                     $dialog = Dialog::where('step', $message)->where('parent_id', $checkHistory->dialog_id)->first();
