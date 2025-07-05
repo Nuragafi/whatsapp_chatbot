@@ -91,7 +91,7 @@ class WhatsappController extends Controller
                         $this->sendMessage($from, $dialog2);
                     } else {
                         $dialog = "Mohon menunggu, kami akan lakukan pengecekan terlebih dahulu ya";
-                        $dialog2 = "Kami menginformasikan bahaw untuk Surat Jaminan (Guarantee Letter) sudah kami terbitkan, silahkan di cek pada aplikasi di JR Care.";
+                        $dialog2 = "Kami menginformasikan bahwa untuk Surat Jaminan (Guarantee Letter) sudah kami terbitkan, silahkan di cek pada aplikasi di JR Care.";
                         $dialog3 = "Ada hal lain yang dapat kami bantu ?";
                         $this->sendMessage($from, $dialog);
                         $this->sendMessage($from, $dialog2);
@@ -103,7 +103,7 @@ class WhatsappController extends Controller
                         ]);
                     }
                 } else if ($checkHistory->dialog_id == 10) {
-                    $this->sendMessage($from, 'Baik, terima kasih telah menghubungi layanan Helpdesk JRcare.');
+                    $this->sendMessage($from, 'Baik, terima kasih telah menghubungi layanan Jasa Raharja Cirebon.');
                     $customer->histories()->create([
                         'created_at' => now(),
                         'step' => $message,
