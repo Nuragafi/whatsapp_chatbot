@@ -119,7 +119,7 @@ class WhatsappController extends Controller
                             'dialog_id' => $dialog->id,
                         ]);
                     } else {
-                        $dialog = Dialog::where('dialog_id', $checkHistory->dialog_id)->first();
+                        $dialog = Dialog::where('id', $checkHistory->dialog_id)->first();
                     }
                     $this->sendMessage($from, $dialog->message ?? '');
                 }
@@ -134,7 +134,7 @@ class WhatsappController extends Controller
 
     private function sendMessage($to, $text)
     {
-        $token = 'EAAqEcSJsdi8BPKxyhbOy1VLCgsZCFGkLLovJu34HFGTODM7cSykqNe5LhPxRrZBuYlt39jHKXnvMQHw662WIAMZCSMhZCx6Obip274nC1oqjYMNlC8hjBa5K140DSZCEuczTJ6ZBVImtcDOLAUrPDpZCK01T2JsZC6g20igPfOugBwzZA13eq7o25oO6Vm3eEm98BEuAavCUH03z38vfqZCQb1TJNXy88sHwmlGmTDK8ep91HaQAZDZD';
+        $token = 'EAAqEcSJsdi8BPAdxcUR2Q9UCLvNxtKe1ZBIVMzs4ilecCLwbo3XpZAodMrNLLVd4AkOhZBZCR1rLZBldSvl2iWzSTnaRtVIojHZADXJuQplwXer8kW5PKILjIm9qGOaZB0UTi6YUiYslgpB9tn9hSQbIqvhsWHqoVw3vVOZCAexQDjSyenDZAgZAtM3metHLPR13BGsyTEZBZCKEyUTBnZAKVZCeTbNavbyTY9MwH6gZBBV6t6uixefAwZDZD';
         $phone_id = '689730917563054';
 
         $url = "https://graph.facebook.com/v22.0/{$phone_id}/messages";
