@@ -103,6 +103,7 @@ class WhatsappController extends Controller
                         ]);
                     }
                 } else if ($checkHistory->dialog_id == 10) {
+                    $this->sendMessage($from, 'Baik, terima kasih telah menghubungi layanan Helpdesk JRcare.');
                     $customer->histories()->create([
                         'created_at' => now(),
                         'step' => $message,
