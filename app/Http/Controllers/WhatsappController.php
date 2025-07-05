@@ -134,7 +134,7 @@ class WhatsappController extends Controller
 
     private function sendMessage($to, $text)
     {
-        $token = 'EAAqEcSJsdi8BPAdxcUR2Q9UCLvNxtKe1ZBIVMzs4ilecCLwbo3XpZAodMrNLLVd4AkOhZBZCR1rLZBldSvl2iWzSTnaRtVIojHZADXJuQplwXer8kW5PKILjIm9qGOaZB0UTi6YUiYslgpB9tn9hSQbIqvhsWHqoVw3vVOZCAexQDjSyenDZAgZAtM3metHLPR13BGsyTEZBZCKEyUTBnZAKVZCeTbNavbyTY9MwH6gZBBV6t6uixefAwZDZD';
+        $token = 'EAAqEcSJsdi8BPIYRblhuYmx2N9DsHuxTwPZBnZCPz04xynuXN6gFl5ZCUukZAM7HITK7gZCiBgX42bbvUyJSwxZBEgJAyAKuyZCD5YNOopNtZCXSSk4N8RGhhAxLbcEt5jZBIYHcaZAA21xZBpCiE9DkGLreZB8kaZBz2nYV8ykIRsnbaqhkWMkd82ausNuyiw4ZBSAAbjhfxoY61Bev3hnUw695JuRhTBGpMsteQ7e9e1hVW3qlSmYgZDZD';
         $phone_id = '689730917563054';
 
         $url = "https://graph.facebook.com/v22.0/{$phone_id}/messages";
