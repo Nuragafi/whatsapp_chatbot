@@ -135,8 +135,8 @@ class WhatsappController extends Controller
 
     private function sendMessage($to, $text)
     {
-        $token = 'EAAqEcSJsdi8BPAvoVE5ZCKtgZAQ96eRwNyK0lujtth7xDF9nmK8eUkwr2VkcqJbegMLVERTNkTFKKZCQ4fvrbiHf5QWnZCPn7ddVmDW62MAKv93AHrrf1825rbCBau6w468nicZBoIFuQXYkr9F13fZCH3YmAdA7lIve0QkAsgT2EvVyGDMMpvobZCXtd7ukZALCOgZDZD';
-        $phone_id = '689730917563054';
+        $token = config('varConfig.whatsapp_token');
+        $phone_id = config('varConfig.number_id');
 
         $url = "https://graph.facebook.com/v22.0/{$phone_id}/messages";
 
